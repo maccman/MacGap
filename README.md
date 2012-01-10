@@ -33,6 +33,12 @@ MacGap exposes an object called `macgap` inside JavaScript. You can use it to al
     // Un-hide application
     macgap.app.unhide();
     
+    // Float application (keep window always on top)
+    macgap.app.onFloat();
+
+    // Unfloat application
+    macgap.app.offFloat();
+    
     // System bell
     macgap.app.beep();
 

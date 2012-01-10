@@ -18,6 +18,14 @@
     [NSApp unhide:nil];
 }
 
+- (void) onFloat{
+    [[NSApplication sharedApplication].mainWindow setLevel:NSFloatingWindowLevel ];
+}
+
+- (void) offFloat{
+    [[NSApplication sharedApplication].mainWindow setLevel:NSNormalWindowLevel ];
+}
+
 - (void)beep {
     NSBeep();
 }

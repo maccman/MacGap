@@ -8,6 +8,8 @@
 - (void) activate;
 - (void) hide;
 - (void) unhide;
+- (void) onFloat;
+- (void) offFloat;
 - (void) beep;
 
 @end
