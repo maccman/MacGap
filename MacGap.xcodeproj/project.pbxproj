@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCAF5EBF14C327560007F7CE /* Command.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAF5EBE14C327560007F7CE /* Command.m */; };
+		BCAF5EC414C327670007F7CE /* MenuItemProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAF5EC114C327670007F7CE /* MenuItemProxy.m */; };
+		BCAF5EC514C327670007F7CE /* MenuProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAF5EC314C327670007F7CE /* MenuProxy.m */; };
+		BCAF5EC814C327900007F7CE /* CallbackDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAF5EC714C327900007F7CE /* CallbackDelegate.m */; };
+		BCAF5ECA14C327B40007F7CE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAF5EC914C327B40007F7CE /* JavaScriptCore.framework */; };
 		FA32509D14BA813600BF0781 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA32509C14BA813600BF0781 /* WebKit.framework */; };
 		FA3250C314BA85E700BF0781 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3250BC14BA85E700BF0781 /* ContentView.m */; };
 		FA3250C514BA85E700BF0781 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3250BE14BA85E700BF0781 /* Utils.m */; };
@@ -42,6 +47,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BCAF5EBD14C327560007F7CE /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Command.h; path = Classes/Commands/Command.h; sourceTree = "<group>"; };
+		BCAF5EBE14C327560007F7CE /* Command.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Command.m; path = Classes/Commands/Command.m; sourceTree = "<group>"; };
+		BCAF5EC014C327670007F7CE /* MenuItemProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuItemProxy.h; path = Classes/Commands/MenuItemProxy.h; sourceTree = "<group>"; };
+		BCAF5EC114C327670007F7CE /* MenuItemProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuItemProxy.m; path = Classes/Commands/MenuItemProxy.m; sourceTree = "<group>"; };
+		BCAF5EC214C327670007F7CE /* MenuProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuProxy.h; path = Classes/Commands/MenuProxy.h; sourceTree = "<group>"; };
+		BCAF5EC314C327670007F7CE /* MenuProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuProxy.m; path = Classes/Commands/MenuProxy.m; sourceTree = "<group>"; };
+		BCAF5EC614C327900007F7CE /* CallbackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CallbackDelegate.h; path = Classes/CallbackDelegate.h; sourceTree = "<group>"; };
+		BCAF5EC714C327900007F7CE /* CallbackDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CallbackDelegate.m; path = Classes/CallbackDelegate.m; sourceTree = "<group>"; };
+		BCAF5EC914C327B40007F7CE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FA32509C14BA813600BF0781 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FA32509E14BA816E00BF0781 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = MacGap/Growl.framework; sourceTree = "<group>"; };
 		FA3250BA14BA85E700BF0781 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAF5ECA14C327B40007F7CE /* JavaScriptCore.framework in Frameworks */,
 				FA3250DC14BA875600BF0781 /* Growl.framework in Frameworks */,
 				FA32509D14BA813600BF0781 /* WebKit.framework in Frameworks */,
 				FAE451BF14BA79C600190544 /* Cocoa.framework in Frameworks */,
@@ -98,6 +113,8 @@
 			children = (
 				FA3250E114BA87DD00BF0781 /* Commands */,
 				FA3250BA14BA85E700BF0781 /* Constants.h */,
+				BCAF5EC614C327900007F7CE /* CallbackDelegate.h */,
+				BCAF5EC714C327900007F7CE /* CallbackDelegate.m */,
 				FA3250BB14BA85E700BF0781 /* ContentView.h */,
 				FA3250BC14BA85E700BF0781 /* ContentView.m */,
 				FA3250BF14BA85E700BF0781 /* WebViewDelegate.h */,
@@ -109,12 +126,18 @@
 		FA3250E114BA87DD00BF0781 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				BCAF5EBD14C327560007F7CE /* Command.h */,
+				BCAF5EBE14C327560007F7CE /* Command.m */,
 				FA3250CA14BA860800BF0781 /* Dock.h */,
 				FA3250CB14BA860800BF0781 /* Dock.m */,
 				FA3250BD14BA85E700BF0781 /* Utils.h */,
 				FA3250BE14BA85E700BF0781 /* Utils.m */,
 				FA3250CC14BA860800BF0781 /* Growl.h */,
 				FA3250CD14BA860800BF0781 /* Growl.m */,
+				BCAF5EC014C327670007F7CE /* MenuItemProxy.h */,
+				BCAF5EC114C327670007F7CE /* MenuItemProxy.m */,
+				BCAF5EC214C327670007F7CE /* MenuProxy.h */,
+				BCAF5EC314C327670007F7CE /* MenuProxy.m */,
 				FA3250CE14BA860800BF0781 /* Path.h */,
 				FA3250CF14BA860800BF0781 /* Path.m */,
 				FA3250D014BA860800BF0781 /* Sound.h */,
@@ -146,6 +169,7 @@
 		FAE451BD14BA79C600190544 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCAF5EC914C327B40007F7CE /* JavaScriptCore.framework */,
 				FA3250DE14BA878D00BF0781 /* Growl.framework */,
 				FA32509E14BA816E00BF0781 /* Growl.framework */,
 				FA32509C14BA813600BF0781 /* WebKit.framework */,
@@ -267,6 +291,10 @@
 				FA3250C714BA85E700BF0781 /* WebViewDelegate.m in Sources */,
 				FAE451CB14BA79C600190544 /* main.m in Sources */,
 				FAE451D214BA79C600190544 /* AppDelegate.m in Sources */,
+				BCAF5EBF14C327560007F7CE /* Command.m in Sources */,
+				BCAF5EC414C327670007F7CE /* MenuItemProxy.m in Sources */,
+				BCAF5EC514C327670007F7CE /* MenuProxy.m in Sources */,
+				BCAF5EC814C327900007F7CE /* CallbackDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
