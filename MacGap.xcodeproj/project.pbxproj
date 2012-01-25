@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88746BEE14CCA435001E160E /* JSEventHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88746BED14CCA435001E160E /* JSEventHelper.m */; };
+		8882CAFA14D081BD0058F7E7 /* WebPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8882CAF914D081BD0058F7E7 /* WebPreferences.plist */; };
 		88C0646014BDE10A00E4BCE2 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C0645F14BDE10A00E4BCE2 /* Window.m */; };
 		88C0646614BDEC5800E4BCE2 /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C0646414BDEC5800E4BCE2 /* Window.xib */; };
 		88C0646D14BDF6A600E4BCE2 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C0646C14BDF6A600E4BCE2 /* WindowController.m */; };
@@ -21,7 +22,6 @@
 		FA3250D914BA860800BF0781 /* Path.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3250CF14BA860800BF0781 /* Path.m */; };
 		FA3250DB14BA860800BF0781 /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3250D114BA860800BF0781 /* Sound.m */; };
 		FA3250DC14BA875600BF0781 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA32509E14BA816E00BF0781 /* Growl.framework */; };
-		FA3250DF14BA878D00BF0781 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA3250DE14BA878D00BF0781 /* Growl.framework */; };
 		FA3250E514BA883A00BF0781 /* public in Resources */ = {isa = PBXBuildFile; fileRef = FA3250E414BA883A00BF0781 /* public */; };
 		FA3250E714BA8BCE00BF0781 /* application.icns in Resources */ = {isa = PBXBuildFile; fileRef = FA3250E614BA8BCE00BF0781 /* application.icns */; };
 		FAE451BF14BA79C600190544 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE451BE14BA79C600190544 /* Cocoa.framework */; };
@@ -39,7 +39,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA3250DF14BA878D00BF0781 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +47,7 @@
 /* Begin PBXFileReference section */
 		88746BEC14CCA435001E160E /* JSEventHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSEventHelper.h; path = Classes/JSEventHelper.h; sourceTree = "<group>"; };
 		88746BED14CCA435001E160E /* JSEventHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSEventHelper.m; path = Classes/JSEventHelper.m; sourceTree = "<group>"; };
+		8882CAF914D081BD0058F7E7 /* WebPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WebPreferences.plist; sourceTree = "<group>"; };
 		88C0645E14BDE10A00E4BCE2 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Window.h; path = Classes/Window.h; sourceTree = "<group>"; };
 		88C0645F14BDE10A00E4BCE2 /* Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Window.m; path = Classes/Window.m; sourceTree = "<group>"; };
 		88C0646514BDEC5800E4BCE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Window.xib; sourceTree = "<group>"; };
@@ -72,7 +72,6 @@
 		FA3250CF14BA860800BF0781 /* Path.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Path.m; path = Classes/Commands/Path.m; sourceTree = "<group>"; };
 		FA3250D014BA860800BF0781 /* Sound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = Classes/Commands/Sound.h; sourceTree = "<group>"; };
 		FA3250D114BA860800BF0781 /* Sound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Sound.m; path = Classes/Commands/Sound.m; sourceTree = "<group>"; };
-		FA3250DE14BA878D00BF0781 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = MacGap/Growl.framework; sourceTree = "<group>"; };
 		FA3250E414BA883A00BF0781 /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
 		FA3250E614BA8BCE00BF0781 /* application.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = application.icns; sourceTree = SOURCE_ROOT; };
 		FAE451BA14BA79C600190544 /* MacGap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacGap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,7 +162,6 @@
 		FAE451BD14BA79C600190544 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA3250DE14BA878D00BF0781 /* Growl.framework */,
 				FA32509E14BA816E00BF0781 /* Growl.framework */,
 				FA32509C14BA813600BF0781 /* WebKit.framework */,
 				FAE451BE14BA79C600190544 /* Cocoa.framework */,
@@ -191,6 +189,7 @@
 				FAE451D314BA79C600190544 /* MainMenu.xib */,
 				88C0646414BDEC5800E4BCE2 /* Window.xib */,
 				FAE451C514BA79C600190544 /* Supporting Files */,
+				8882CAF914D081BD0058F7E7 /* WebPreferences.plist */,
 			);
 			path = MacGap;
 			sourceTree = "<group>";
@@ -266,6 +265,7 @@
 				FAE451D514BA79C600190544 /* MainMenu.xib in Resources */,
 				FA3250E714BA8BCE00BF0781 /* application.icns in Resources */,
 				88C0646614BDEC5800E4BCE2 /* Window.xib in Resources */,
+				8882CAFA14D081BD0058F7E7 /* WebPreferences.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
