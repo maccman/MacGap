@@ -6,6 +6,9 @@
     - (void)_setLocalStorageDatabasePath:(NSString *)path;
     - (void) setLocalStorageEnabled: (BOOL) localStorageEnabled;
     - (void) setDatabasesEnabled:(BOOL)databasesEnabled;
+    - (void) setDeveloperExtrasEnabled:(BOOL)developerExtrasEnabled;
+    - (void) setWebGLEnabled:(BOOL)webGLEnabled;
+    - (void) setOfflineWebApplicationCacheEnabled:(BOOL)offlineWebApplicationCacheEnabled;
 @end
 
 @implementation ContentView
@@ -19,8 +22,16 @@
     NSString *applicationSupportFile = [@"~/Library/Application Support/" stringByExpandingTildeInPath];
     NSString *savePath = [NSString pathWithComponents:[NSArray arrayWithObjects:applicationSupportFile, cappBundleName, @"LocalStorage", nil]];
     [webPrefs _setLocalStorageDatabasePath:savePath];
-    [webPrefs setLocalStorageEnabled:YES];
-    [webPrefs setDatabasesEnabled:YES];
+    
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"WebPreferences" ofType:@"plist"];
+    NSDictionary *webPreferencesFromPlist = [NSDictionary dictionaryWithContentsOfURL:[NSURL fileURLWithPath:file]];
+    
+    [webPrefs setLocalStorageEnabled:[[webPreferencesFromPlist valueForKey:@"localStorageEnabled"] boolValue]];
+    [webPrefs setDatabasesEnabled:[[webPreferencesFromPlist valueForKey:@"databasesEnabled"] boolValue]];
+    [webPrefs setDeveloperExtrasEnabled:[[webPreferencesFromPlist valueForKey:@"developerExtrasEnabled"] boolValue]];
+    [webPrefs setOfflineWebApplicationCacheEnabled:[[webPreferencesFromPlist valueForKey:@"offlineWebApplicationCacheEnabled"] boolValue]];
+    [webPrefs setWebGLEnabled:[[webPreferencesFromPlist valueForKey:@"webGLEnabled"] boolValue]];
+    
     [self.webView setPreferences:webPrefs];
     
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage 
