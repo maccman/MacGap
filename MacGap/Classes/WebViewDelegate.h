@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
 
+@class Nodejs;
 @class Sound;
 @class Dock;
 @class Growl;
@@ -11,6 +12,7 @@
 @class WindowController;
 
 @interface WebViewDelegate : NSObject {
+    Nodejs* nodejs;
 	Sound* sound;
     Dock* dock;
     Growl* growl;
@@ -20,7 +22,7 @@
 }
 
 
-
+@property (nonatomic, retain) Nodejs* nodejs;
 @property (nonatomic, retain) Sound* sound;
 @property (nonatomic, retain) Dock* dock;
 @property (nonatomic, retain) Growl* growl;
