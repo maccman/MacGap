@@ -18,9 +18,9 @@
     serverProcess = [[NSTask alloc] init];
     
     // Path to the resources directory in app bundle
-    NSString *resourcesPath = [[NSBundle mainBundle] resourcePath];    
+    NSString *resourcesPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingFormat:@"/public"];    
     // Path to Node.js binary in app bundle
-    NSString *nodePath = [resourcesPath stringByAppendingString:@"/public/bin/node"];
+    NSString *nodePath = [resourcesPath stringByAppendingString:@"/bin/node"];
     // Path to server directory in app bundle
     NSString *serverPath = [resourcesPath stringByAppendingString:@"/node"];
     // Path to server.js file in app bundle
