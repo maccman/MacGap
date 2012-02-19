@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1442460214EFCBB500BD96E9 /* Nodejs.m in Sources */ = {isa = PBXBuildFile; fileRef = 1442460114EFCBB500BD96E9 /* Nodejs.m */; };
 		88746BEE14CCA435001E160E /* JSEventHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88746BED14CCA435001E160E /* JSEventHelper.m */; };
 		88C0646014BDE10A00E4BCE2 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C0645F14BDE10A00E4BCE2 /* Window.m */; };
 		88C0646614BDEC5800E4BCE2 /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C0646414BDEC5800E4BCE2 /* Window.xib */; };
@@ -46,6 +47,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1442460014EFCBB500BD96E9 /* Nodejs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nodejs.h; path = Classes/Commands/Nodejs.h; sourceTree = "<group>"; };
+		1442460114EFCBB500BD96E9 /* Nodejs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Nodejs.m; path = Classes/Commands/Nodejs.m; sourceTree = "<group>"; };
 		88746BEC14CCA435001E160E /* JSEventHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSEventHelper.h; path = Classes/JSEventHelper.h; sourceTree = "<group>"; };
 		88746BED14CCA435001E160E /* JSEventHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSEventHelper.m; path = Classes/JSEventHelper.m; sourceTree = "<group>"; };
 		88C0645E14BDE10A00E4BCE2 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Window.h; path = Classes/Window.h; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				88C0645F14BDE10A00E4BCE2 /* Window.m */,
 				88746BEC14CCA435001E160E /* JSEventHelper.h */,
 				88746BED14CCA435001E160E /* JSEventHelper.m */,
+				1442460014EFCBB500BD96E9 /* Nodejs.h */,
+				1442460114EFCBB500BD96E9 /* Nodejs.m */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				88C0646014BDE10A00E4BCE2 /* Window.m in Sources */,
 				88C0646D14BDF6A600E4BCE2 /* WindowController.m in Sources */,
 				88746BEE14CCA435001E160E /* JSEventHelper.m in Sources */,
+				1442460214EFCBB500BD96E9 /* Nodejs.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

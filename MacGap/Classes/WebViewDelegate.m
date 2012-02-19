@@ -1,4 +1,5 @@
 #import "WebViewDelegate.h"
+#import "Nodejs.h"
 #import "Sound.h"
 #import "Dock.h"
 #import "Growl.h"
@@ -8,6 +9,7 @@
 #import "WindowController.h"
 @implementation WebViewDelegate
 
+@synthesize nodejs;
 @synthesize sound;
 @synthesize dock;
 @synthesize growl;
@@ -18,6 +20,7 @@
 
 - (void) webView:(WebView*)webView didClearWindowObject:(WebScriptObject*)windowScriptObject forFrame:(WebFrame *)frame
 {
+    if (self.nodejs == nil) { self.nodejs = [Nodejs new]; }
 	if (self.sound == nil) { self.sound = [Sound new]; }
 	if (self.dock == nil) { self.dock = [Dock new]; }
 	if (self.growl == nil) { self.growl = [Growl new]; }
