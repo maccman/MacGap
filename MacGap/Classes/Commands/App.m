@@ -42,6 +42,10 @@
     NSBeep();
 }
 
+- (void) log:(NSString*)msg {
+    NSLog(@"%@", msg);
+}
+
 - (void) open:(NSString*)url {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
 }
@@ -66,6 +70,8 @@
 		result = @"open";
 	} else if (selector == @selector(launch:)) {
         result = @"launch";
+    } else if (selector == @selector(log:)) {
+        result = @"log";
     }
 	
 	return result;
