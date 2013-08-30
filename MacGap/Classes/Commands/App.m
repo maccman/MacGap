@@ -58,6 +58,11 @@
     [JSEventHelper triggerEvent:@"wake" forWebView:self.webView];
 }
 
+- (void)consoleLog:(NSString *)aMessage {
+    NSLog(@"%@", aMessage);
+}
+
+
 + (NSString*) webScriptNameForSelector:(SEL)selector
 {
 	id	result = nil;
@@ -66,8 +71,10 @@
 		result = @"open";
 	} else if (selector == @selector(launch:)) {
         result = @"launch";
+    } else if (selector == @selector(consoleLog:)) {
+        result = @"log";
     }
-	
+
 	return result;
 }
 

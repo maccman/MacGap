@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Webkit/Webkit.h>
 
-@interface Menus : NSObject
+@interface Menus : NSObject{
+    
+}
+@property (nonatomic, retain) WebView *webView;
+- (id) initWithWebView:(WebView *)view;
+- (void) addMenu:(NSString *)menuTitle;
 
 @end

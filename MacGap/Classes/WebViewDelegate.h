@@ -9,6 +9,7 @@
 @class App;
 @class Window;
 @class Clipboard;
+@class Menus;
 
 @class WindowController;
 
@@ -21,6 +22,7 @@
     App* app;
     Window* window;
     Clipboard* clipboard;
+    Menus* menus;
 }
 
 
@@ -33,6 +35,7 @@
 @property (nonatomic, retain) App* app;
 @property (nonatomic, retain) Window* window;
 @property (nonatomic, retain) Clipboard* clipboard;
+@property (nonatomic, retain) Menus* menus;
 
 @property (nonatomic, retain) WindowController *requestedWindow;
 
