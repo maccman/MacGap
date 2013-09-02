@@ -28,7 +28,6 @@
     NSMenu *newMenu;
     
     NSString *menuTitle = [menuContents valueForKey:@"menuTitle"];
-    NSLog(@"menuTitle = %@", menuTitle);
     NSArray *menuItems = [menuContents valueForKey:@"menuItems"];
     NSUInteger count = [[menuItems valueForKey:@"length"] integerValue];
     newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:menuTitle action:nil keyEquivalent:@""];
@@ -38,11 +37,18 @@
     int i;
     for (i = 0; i < count; i++){
         NSString *itemTitle = [[menuItems objectAtIndex:i] valueForKey:@"title"];
-        NSString *itemKey = @"";
-        itemKey = [[menuItems objectAtIndex:i] valueForKey:@"key"];
-        NSLog(@"itemKey = %@", itemKey);
+        NSString *itemKey, *menuItemChar;
         NSMenuItem *newItem;
-        NSString *menuItemChar = [itemKey substringFromIndex:[itemKey length] - 1];
+        menuItemChar = @"";
+        @try {
+            itemKey = [[menuItems objectAtIndex:i] valueForKey:@"key"];
+            if ([itemKey length] > 0)
+                menuItemChar = [itemKey substringFromIndex:[itemKey length] - 1];
+            
+        }
+        @catch (NSException* e) {  // No key equivalent given, menuItemChar = ""
+        }
+                
         newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:itemTitle action:@selector(menuTriggered:) keyEquivalent:menuItemChar];
         [newItem setTarget:self];
         

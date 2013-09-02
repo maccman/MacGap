@@ -29,7 +29,7 @@
 
       macgap.app.log('Hi Xcode/Console.app!!');
       macgap.notice.notify({title: 'MacGap', content: 'Hello World'});
-      macgap.menus.addMenu({menuTitle: 'MacGap', menuItems: [{title: 'Menu Item 1', key: 'cmd+ctrl+l'}, {title: 'Menu Item 2', key: 'alt+cmd+shift+h'}]});
+      macgap.menus.addMenu({menuTitle: 'MacGap', menuItems: [{title: 'Menu Item 1', key: 'cmd+ctrl+l'}, {title: 'Menu Item 2', key: 'alt+cmd+shift+h'}, {title: 'Menu Item 3', key: ''}, {title: 'Menu Item 4'}]});
       document.addEventListener('menucalled', function(e){
                                 macgap.app.log(e.detail);
                                 if (e.detail == "Menu Item 1"){
