@@ -9,6 +9,9 @@
 #import "WindowController.h"
 #import "Clipboard.h"
 #import "Menus.h"
+#import "AppDelegate.h"
+#import "FileSystem.h"
+
 @implementation WebViewDelegate
 
 @synthesize sound;
@@ -21,6 +24,7 @@
 @synthesize requestedWindow;
 @synthesize clipboard;
 @synthesize menus;
+@synthesize fs;
 
 - (void) webView:(WebView*)webView didClearWindowObject:(WebScriptObject*)windowScriptObject forFrame:(WebFrame *)frame
 {
@@ -31,6 +35,7 @@
 	if (self.path == nil) { self.path = [Path new]; }
 	if (self.clipboard == nil) { self.clipboard = [Clipboard new]; }
 	if (self.menus == nil) { self.menus = [[Menus alloc] initWithWebView:webView]; }
+    if (self.fs == nil) { self.fs = [[FileSystem alloc] init]; }
     
     if (self.app == nil) { 
         self.app = [[App alloc] initWithWebView:webView]; 
@@ -40,7 +45,11 @@
         self.window = [[Window alloc] initWithWebView:webView]; 
     }
     
+    //We need the app delegate to know which is the webview
+    ((AppDelegate*)[NSApp delegate]).webView = webView;
+    
     [windowScriptObject setValue:self forKey:kWebScriptNamespace];
+
 }
 
 

@@ -1,6 +1,7 @@
 #import "App.h"
 
 #import "JSEventHelper.h"
+#import "MF_Base64Additions.h"
 
 @implementation App
 
@@ -87,5 +88,7 @@
 {
 	return YES;
 }
+
+
 
 @end

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05D682AAA8814D2F833C2571 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BB9B0DADFC473AA2A095F5 /* libPods.a */; };
 		1495814F15C15CCC00E1CFE5 /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1495814E15C15CCC00E1CFE5 /* Notice.m */; };
+		3D42590E17D62F7000F4838E /* FileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D42590D17D62F7000F4838E /* FileSystem.m */; };
 		3D537F8317D1396F0094636E /* Menus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D537F8217D1396F0094636E /* Menus.m */; };
 		88746BEE14CCA435001E160E /* JSEventHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88746BED14CCA435001E160E /* JSEventHelper.m */; };
 		88C0646014BDE10A00E4BCE2 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C0645F14BDE10A00E4BCE2 /* Window.m */; };
@@ -51,8 +53,12 @@
 /* Begin PBXFileReference section */
 		1495814D15C15CCC00E1CFE5 /* Notice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notice.h; path = Classes/Commands/Notice.h; sourceTree = "<group>"; };
 		1495814E15C15CCC00E1CFE5 /* Notice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Notice.m; path = Classes/Commands/Notice.m; sourceTree = "<group>"; };
+		27334ADA006F437A9BDF0BCD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		3D42590C17D62F7000F4838E /* FileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystem.h; sourceTree = "<group>"; };
+		3D42590D17D62F7000F4838E /* FileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystem.m; sourceTree = "<group>"; };
 		3D537F8117D1396F0094636E /* Menus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menus.h; sourceTree = "<group>"; };
 		3D537F8217D1396F0094636E /* Menus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menus.m; sourceTree = "<group>"; };
+		49BB9B0DADFC473AA2A095F5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		88746BEC14CCA435001E160E /* JSEventHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSEventHelper.h; path = Classes/JSEventHelper.h; sourceTree = "<group>"; };
 		88746BED14CCA435001E160E /* JSEventHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSEventHelper.m; path = Classes/JSEventHelper.m; sourceTree = "<group>"; };
 		88C0645E14BDE10A00E4BCE2 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Window.h; path = Classes/Window.h; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 				FA3F7743168F70850027B324 /* Growl.framework in Frameworks */,
 				FA3F7742168F70790027B324 /* Cocoa.framework in Frameworks */,
 				FA32509D14BA813600BF0781 /* WebKit.framework in Frameworks */,
+				05D682AAA8814D2F833C2571 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +161,8 @@
 				F2B80015179E0FC100B069A8 /* Clipboard.m */,
 				3D537F8117D1396F0094636E /* Menus.h */,
 				3D537F8217D1396F0094636E /* Menus.m */,
+				3D42590C17D62F7000F4838E /* FileSystem.h */,
+				3D42590D17D62F7000F4838E /* FileSystem.m */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -166,6 +175,7 @@
 				FAE451C414BA79C600190544 /* MacGap */,
 				FAE451BD14BA79C600190544 /* Frameworks */,
 				FAE451BB14BA79C600190544 /* Products */,
+				27334ADA006F437A9BDF0BCD /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,6 +195,7 @@
 				FA32509C14BA813600BF0781 /* WebKit.framework */,
 				FAE451BE14BA79C600190544 /* Cocoa.framework */,
 				FAE451C014BA79C600190544 /* Other Frameworks */,
+				49BB9B0DADFC473AA2A095F5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,10 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE451D814BA79C600190544 /* Build configuration list for PBXNativeTarget "MacGap" */;
 			buildPhases = (
+				382456DD10984774BB62D110 /* Check Pods Manifest.lock */,
 				FAE451B814BA79C600190544 /* Resources */,
 				FAE451B614BA79C600190544 /* Sources */,
 				FAE451B714BA79C600190544 /* Frameworks */,
 				FA3250DD14BA876F00BF0781 /* CopyFiles */,
+				AD5AB83449FC4B318B9AC47C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,6 +301,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		382456DD10984774BB62D110 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD5AB83449FC4B318B9AC47C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAE451B614BA79C600190544 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -309,6 +355,7 @@
 				1495814F15C15CCC00E1CFE5 /* Notice.m in Sources */,
 				F2B80016179E0FC100B069A8 /* Clipboard.m in Sources */,
 				3D537F8317D1396F0094636E /* Menus.m in Sources */,
+				3D42590E17D62F7000F4838E /* FileSystem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +446,7 @@
 		};
 		FAE451D914BA79C600190544 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27334ADA006F437A9BDF0BCD /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
@@ -420,6 +468,7 @@
 		};
 		FAE451DA14BA79C600190544 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27334ADA006F437A9BDF0BCD /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";

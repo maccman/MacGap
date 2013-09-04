@@ -8,6 +8,8 @@
 
 #import "Menus.h"
 #import "JSEventHelper.h"
+#import "MF_Base64Additions.h"
+
 
 @implementation Menus
 
@@ -39,16 +41,24 @@
         NSString *itemTitle = [[menuItems objectAtIndex:i] valueForKey:@"title"];
         NSString *itemKey, *menuItemChar;
         NSMenuItem *newItem;
+        BOOL itemB64 = NO;
         menuItemChar = @"";
         @try {
             itemKey = [[menuItems objectAtIndex:i] valueForKey:@"key"];
             if ([itemKey length] > 0)
                 menuItemChar = [itemKey substringFromIndex:[itemKey length] - 1];
+         }
+        @catch (NSException* e) {  // No key equivalent given, menuItemChar = ""
+        }
+        @try {
+            itemB64 = [[[menuItems objectAtIndex:i] valueForKey:@"b64"] intValue];
             
         }
         @catch (NSException* e) {  // No key equivalent given, menuItemChar = ""
         }
-                
+        NSLog(@"itemB64 = %i", itemB64);
+        if (itemB64 != 0) itemTitle = [NSString stringFromBase64String:itemTitle];
+        NSLog(@"itemTitle = %@", itemTitle);
         newItem = [[NSMenuItem allocWithZone:[NSMenu menuZone]] initWithTitle:itemTitle action:@selector(menuTriggered:) keyEquivalent:menuItemChar];
         [newItem setTarget:self];
         

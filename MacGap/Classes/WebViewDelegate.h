@@ -10,6 +10,7 @@
 @class Window;
 @class Clipboard;
 @class Menus;
+@class FileSystem;
 
 @class WindowController;
 
@@ -23,6 +24,7 @@
     Window* window;
     Clipboard* clipboard;
     Menus* menus;
+    FileSystem *fs;
 }
 
 
@@ -36,6 +38,7 @@
 @property (nonatomic, retain) Window* window;
 @property (nonatomic, retain) Clipboard* clipboard;
 @property (nonatomic, retain) Menus* menus;
+@property (nonatomic, retain) FileSystem* fs;
 
 @property (nonatomic, retain) WindowController *requestedWindow;
 
