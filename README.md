@@ -19,102 +19,120 @@ MacGap exposes an object called `macgap` inside JavaScript. You can use it to al
 
 App:
 
-    // Quit application
-    macgap.app.terminate();
+```js
+// Quit application
+macgap.app.terminate();
 
-    // Activate application (bring to front)
-    macgap.app.activate();
+// Activate application (bring to front)
+macgap.app.activate();
 
-    // Hide application
-    macgap.app.hide();
+// Hide application
+macgap.app.hide();
 
-    // Un-hide application
-    macgap.app.unhide();
+// Un-hide application
+macgap.app.unhide();
 
-    // System bell
-    macgap.app.beep();
+// System bell
+macgap.app.beep();
 
-    // Open URL in default browser
-    macgap.app.open("http://google.com");
+// Open URL in default browser
+macgap.app.open("http://google.com");
 
-    // Launch application
-    macgap.app.launch("TextEdit");
+// Launch application
+macgap.app.launch("TextEdit");
+```
 
 Clipboard:
 
-    // copy text to clipboard
-    macgap.clipboard.copy('this text will be copied to the clipboard');
+```js
+// copy text to clipboard
+macgap.clipboard.copy('this text will be copied to the clipboard');
 
-    // returns the contents of the clipboard
-    var clipboardContents = macgap.clipboard.paste();
+// returns the contents of the clipboard
+var clipboardContents = macgap.clipboard.paste();
+```
 
 Window:
 
-    // Open a new window
-    macgap.window.open({url:"public/index2.html", width: 400, height: 300});
+```js
+// Open a new window
+macgap.window.open({url:"public/index2.html", width: 400, height: 300});
 
-    // Resize window
-    macgap.window.resize({width: 400, height: 200});
+// Resize window
+macgap.window.resize({width: 400, height: 200});
 
-    // Move window (Bottom left is x:0 and y:0)
-    macgap.window.move({x:0, y: 200});
+// Move window (Bottom left is x:0 and y:0)
+macgap.window.move({x:0, y: 200});
 
-    // Toggle fullscreen mode
-    macgap.window.toggleFullscreen();
+// Toggle fullscreen mode
+macgap.window.toggleFullscreen();
 
-    // Maximize the window
-    macgap.window.maximize();
+// Maximize the window
+macgap.window.maximize();
 
-    // Minimize the window
-    macgap.window.minimize();
+// Minimize the window
+macgap.window.minimize();
 
-    // Return true if the window is currently maximized and false if it is not
-    var isWindowMaximized = macgap.window.isMaximized();
+// Return true if the window is currently maximized and false if it is not
+var isWindowMaximized = macgap.window.isMaximized();
+```
 
 Path:
 
-    // Path to application
-    macgap.path.application;
+```js
+// Path to application
+macgap.path.application;
 
-    // Path to application's resources
-    macgap.path.resource;
+// Path to application's resources
+macgap.path.resource;
+```
 
 Dock:
 
-    // Set the Dock's badge
-    macgap.dock.badge = "10";
+```js
+// Set the Dock's badge
+macgap.dock.badge = "10";
+```
 
 Sound:
 
-    // Play a sound
-    macgap.sound.play("./my/sound.mp3")
+```js
+// Play a sound
+macgap.sound.play("./my/sound.mp3")
 
-    // Play a system sound
-    macgap.sound.playSystem("funk");
+// Play a system sound
+macgap.sound.playSystem("funk");
+```
 
 Growl:
 
-    // Send a Growl notification
-    macgap.growl.notify({
-      title: "Notify",
-      content: "New Message!"
-    });
+```js
+// Send a Growl notification
+macgap.growl.notify({
+  title: "Notify",
+  content: "New Message!"
+});
+```
 
 Notice:
 
-    // Send a Native User notification
-    macgap.notice.notify({
-      title: "Notify",
-      content: "New Message!"
-    });
+```js
+// Send a Native User notification
+macgap.notice.notify({
+  title: "Notify",
+  content: "New Message!"
+});
+```
 
 Events:
 
-    //Mac OS X on wake event.
-    document.addEventListener('wake', function(){console.log('Wake!!')}, true);
+```js
+//Mac OS X on wake event.
+document.addEventListener('wake', function(){console.log('Wake!!')}, true);
 
-    //Mac OS X on sleep event.
-    document.addEventListener('sleep', function(){console.log('Sleep!!')}, true);
+//Mac OS X on sleep event.
+document.addEventListener('sleep', function(){console.log('Sleep!!')}, true);
+```
 
 ##Offline Patterns
 
@@ -122,7 +140,9 @@ Desktop apps load immediately and work offline, whilst web apps have the advanta
 
 First you can define a refresh tag in `index.html`, which will immediately forward your WebView to a given address.
 
-    <meta http-equiv="refresh" content="0;url=http://example.com">
+```html
+<meta http-equiv="refresh" content="0;url=http://example.com">
+```
 
 Then use [HTML5 offline APIs](http://www.w3.org/TR/html5/offline.html) to cache your application locally. The first time your application launches, it'll download all the remote resources for use offline. Then during subsequent launches the locally cached resources will be used, and the application will fully function offline. If your remote application changes, then the cache manifest will be updated and application re-cached.
 
