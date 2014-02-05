@@ -1,34 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MacGap</title>
-  <style type="text/css" media="screen">
-    html, body {
-      height: 100%;
-      width: 100%;
-      background: #FFF;
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
-      -webkit-user-select: none;
-    }
+	<!-- Don't forget this line for right UTF8 support -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>MacGap</title>
+	<style type="text/css" media="screen">
+	html, body {
+		height: 100%;
+		width: 100%;
+		background: #FFF;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		-webkit-user-select: none;
+	}
 
-    h1 {
-      color: #E0E0E0;
-      margin: 18% 0;
-      text-align: center;
-      font-family: helvetica;
-    }
-  </style>
-  
-  <meta http-equiv="refresh" content="5;url=http://google.com">  
+	h1 {
+		color: #E0E0E0;
+		margin: 18% 0;
+		text-align: center;
+		font-family: helvetica;
+	}
+	</style>
+  	
+	<!-- We need Base64 support for seamless Objective-C and Javascript binary communication --> 
+	<script src="bower/js-base64/base64.js"></script>
+	
+	<!-- All apps common JS support will appear in this file --> 
+	<script src="macgap.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+	//NSLog bridge
+	macgap.app.log('Hi Xcode/Console.app!!');
+	
+	//Mac OS X notifications
+	macgap.notice.notify({title: 'MacGap', content: 'Hello World'});
+	
+	//Add a menu
+	macgap.menus.addMenu({menuTitle: 'MacGap', menuItems: [{title: 'Menu Item 1', key: 'cmd+ctrl+l'}, {title: 'Menu Item 2 小飼弾', key: 'alt+cmd+shift+h'}, {title: 'Menu Item 3', key: ''}, {title: 'مرحبا بكم جميعا', key: 'ñ'}]});
+	document.addEventListener('menucalled', function(e){
+		macgap.app.log(e.detail);
+		if (e.detail == "Menu Item 1"){
+			macgap.app.log('First item of menu was called... do something!');
+		}
+	}, false);
+    
+	
+	// File Open event      
+	document.addEventListener('fileopen', function(e){
+		filePath = e.detail.path;
+		var re = /(?:\.([^.]+))?$/;
+		ext = filePath.match(/\.[^.]+$/);
+		// open ~/Pictures/me.png -a MacGap.app
+		if (ext == ".png") {
+			macgap.app.log("it's a PNG!!");
+			document.getElementById("myImage").src = "data:image/png;base64," + e.detail.data;  //draw a picture with given png file
+		}
+		else if (ext == ".txt" || ext == ".macgap") { // .macgap defined as example in project filetypes, works with double click in Finder
+			fileContents = Base64.decode(e.detail.data);
+			macgap.app.log(fileContents);
+		}		
+	}, false);
+	
+	// Write a string to a path in the file system
+	"各個都".stringToFile("~/Desktop/file from macgap.txt");
+	</script>
+
 </head>
 <body>
   
-  <script type="text/javascript" charset="utf-8">
-      macgap.notice.notify({title: 'MacGap', content: 'Hello World'});
-  </script>
-  
-  <h1>MacGap</h1>
+	<h1>MacGap</h1>
+	<h1><img id="myImage" src="" /></h1>
 </body>
 </html>

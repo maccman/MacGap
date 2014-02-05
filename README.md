@@ -119,6 +119,20 @@ Events:
     //Mac OS X on sleep event.
     document.addEventListener('sleep', function(){console.log('Sleep!!')}, true);
 
+Menus:
+
+	//Create a menu on the menu bar with menu items.
+	macgap.menus.addMenu({menuTitle: 'MacGap', menuItems: [{title: 'Menu Item 1', key: 'cmd+ctrl+l'}, {title: 'Menu Item 2', key: 'alt+cmd+shift+h'}]});
+	
+	//Respond to menu items
+	document.addEventListener('menucalled', function(e){macgap.app.log(e.detail);}, false);
+
+Logs: 
+
+	//log to Xcode/Console.app
+	macgap.app.log('Hi Xcode/Console.app!!');
+
+
 ##Offline Patterns
 
 Desktop apps load immediately and work offline, whilst web apps have the advantage of being easily updated and remotely managed. MacGap gives you the best of both worlds via HTML5's offline APIs.

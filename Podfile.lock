@@ -1,0 +1,13 @@
+PODS:
+  - Base64 (1.0.1)
+  - WebViewJavascriptBridge (4.0.1)
+
+DEPENDENCIES:
+  - Base64
+  - WebViewJavascriptBridge
+
+SPEC CHECKSUMS:
+  Base64: eaac9f2088ba659c5db1db960576eb0f2969ebaf
+  WebViewJavascriptBridge: f338f16ea0690e03914d8463af4b6372cb21a437
+
+COCOAPODS: 0.23.0

@@ -14,5 +14,6 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (retain, nonatomic) WindowController *windowController;
+@property (nonatomic, retain) WebView *webView;
 
 @end

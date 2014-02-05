@@ -7,14 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "MF_Base64Additions.h"
 
 @implementation AppDelegate
 
+@synthesize webView;
 @synthesize windowController;
 
-- (void) applicationWillFinishLaunching:(NSNotification *)aNotification
-{
-
+- (void) applicationWillFinishLaunching:(NSNotification *)aNotification{
     
 }
 
@@ -33,5 +33,16 @@
     self.windowController.contentView.alphaValue = 1.0;
     [self.windowController showWindow:self];
 }
+
+// We can open files by sending the fileopen event
+- (BOOL)application:(NSApplication*)app openFile:(NSString *)filename{
+    NSString *data = [NSData dataWithContentsOfFile:filename];
+    NSString *str64 = [data base64String];
+    NSString *str = [NSString stringWithFormat:@"var e = new CustomEvent('fileopen', {'detail': {'path': '%@', 'data': '%@'}});  document.dispatchEvent(e);", filename, str64];
+    [self.webView stringByEvaluatingJavaScriptFromString:str];
+
+    return YES;
+}
+
 
 @end
