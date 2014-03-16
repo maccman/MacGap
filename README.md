@@ -82,6 +82,10 @@ Path:
     // Path to application's resources
     macgap.path.resource;
 
+Local files:
+    // read local file (must be included in public/localfiles.whitelist)
+    macgap.localfile.read('~/file.txt');
+
 Dock:
 
     // Set the Dock's badge

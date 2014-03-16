@@ -6,6 +6,7 @@
 @class Growl;
 @class Notice;
 @class Path;
+@class Localfile;
 @class App;
 @class Window;
 @class Clipboard;
@@ -18,6 +19,7 @@
     Growl* growl;
     Notice* notice;
     Path* path;
+    Localfile* localfile;
     App* app;
     Window* window;
     Clipboard* clipboard;
@@ -30,6 +32,7 @@
 @property (nonatomic, retain) Growl* growl;
 @property (nonatomic, retain) Notice* notice;
 @property (nonatomic, retain) Path* path;
+@property (nonatomic, retain) Localfile* localfile;
 @property (nonatomic, retain) App* app;
 @property (nonatomic, retain) Window* window;
 @property (nonatomic, retain) Clipboard* clipboard;
