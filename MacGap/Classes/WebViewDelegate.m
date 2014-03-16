@@ -4,6 +4,7 @@
 #import "Growl.h"
 #import "Notice.h"
 #import "Path.h"
+#import "Localfile.h"
 #import "App.h"
 #import "Window.h"
 #import "WindowController.h"
@@ -15,6 +16,7 @@
 @synthesize growl;
 @synthesize notice;
 @synthesize path;
+@synthesize localfile;
 @synthesize app;
 @synthesize window;
 @synthesize requestedWindow;
@@ -27,6 +29,7 @@
 	if (self.growl == nil) { self.growl = [Growl new]; }
 	if (self.notice == nil && [Notice available] == YES) { self.notice = [Notice new]; }
 	if (self.path == nil) { self.path = [Path new]; }
+	if (self.localfile == nil) { self.localfile = [Localfile new]; }
 	if (self.clipboard == nil) { self.clipboard = [Clipboard new]; }
 	
     if (self.app == nil) { 
