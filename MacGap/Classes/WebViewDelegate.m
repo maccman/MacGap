@@ -149,7 +149,7 @@
             switch (tag)
             {
                 case WebMenuItemTagOpenLinkInNewWindow:
-                case WebMenuItemTagDownloadLinkToDisk:
+                //case WebMenuItemTagDownloadLinkToDisk:
                 case WebMenuItemTagCopyLinkToClipboard:
                 case WebMenuItemTagOpenImageInNewWindow:
                 case WebMenuItemTagDownloadImageToDisk:
@@ -194,6 +194,27 @@
 {
 	return NO;
 }
+
+
+/*
+ * Download everything except HTML pages.
+ */
+- (void)webView:(WebView *)webView decidePolicyForMIMEType:(NSString *)type
+        request:(NSURLRequest *)request
+          frame:(WebFrame *)frame
+decisionListener:(id < WebPolicyDecisionListener >)listener
+{
+    NSLog (@"%@", type);
+    if([type isEqualToString:@"text/html"])
+    {
+        
+        [listener use];
+    }
+    else{
+        [listener download];
+    };
+}
+
 
 
 @end
