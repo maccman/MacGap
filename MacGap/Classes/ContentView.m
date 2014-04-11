@@ -2,6 +2,7 @@
 #import "WebViewDelegate.h"
 #import "AppDelegate.h"
 #import "JSEventHelper.h"
+#import "DownloadDelegate.h"
 
 @interface WebPreferences (WebPreferencesPrivate)
     - (void)_setLocalStorageDatabasePath:(NSString *)path;
@@ -14,7 +15,7 @@
 
 @implementation ContentView
 
-@synthesize webView, delegate, mainMenu;
+@synthesize webView, delegate, downloadDelegate, mainMenu;
 
 - (void) awakeFromNib
 {
@@ -39,10 +40,11 @@
     [self.webView setApplicationNameForUserAgent: @"MacGap"];
     
 	self.delegate = [[WebViewDelegate alloc] initWithMenu:[NSApp mainMenu]];
+    self.downloadDelegate = [[DownloadDelegate alloc] init];
 	[self.webView setFrameLoadDelegate:self.delegate];
 	[self.webView setUIDelegate:self.delegate];
 	[self.webView setResourceLoadDelegate:self.delegate];
-	[self.webView setDownloadDelegate:self.delegate];
+	[self.webView setDownloadDelegate:self.downloadDelegate];
 	[self.webView setPolicyDelegate:self.delegate];	
     [self.webView setDrawsBackground:NO];
     [self.webView setShouldCloseWithWindow:NO];
