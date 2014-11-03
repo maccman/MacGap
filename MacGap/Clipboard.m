@@ -27,6 +27,24 @@
     return @"";
 }
 
+- (NSString *) pasteImage {
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    NSArray *classArray = [NSArray arrayWithObject:[NSImage class]];
+    NSDictionary *options = [NSDictionary dictionary];
+    BOOL ok = [pasteboard canReadObjectForClasses:classArray options:options];
+    if (ok) {
+        NSArray *objectsToPaste = [pasteboard readObjectsForClasses:classArray options:options];
+        NSImage *image = [objectsToPaste objectAtIndex:0];
+        [image lockFocus];
+        NSBitmapImageRep *bitmapRep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:NSMakeRect(0, 0, image.size.width, image.size.height)];
+        [image unlockFocus];
+        NSData *imageData = [bitmapRep representationUsingType:NSPNGFileType properties:nil];;
+        NSString *base64String = [imageData base64EncodedStringWithOptions:0];
+        return base64String;
+    }
+    return @"";
+}
+
 + (NSString*) webScriptNameForSelector:(SEL)selector
 {
 	id	result = nil;

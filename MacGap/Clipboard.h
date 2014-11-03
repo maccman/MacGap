@@ -6,5 +6,6 @@
 
 - (void) copy:(NSString*)text;
 - (NSString *) paste;
+- (NSString *) pasteImage;
 
 @end
