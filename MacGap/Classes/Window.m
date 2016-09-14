@@ -16,6 +16,7 @@
 {
     self.windowController = [[WindowController alloc] initWithURL:[properties valueForKey:@"url"]];
     [self.windowController showWindow: [NSApplication sharedApplication].delegate];
+    [self.windowController.window setTitle:[properties valueForKey:@"title"]];
     [self.windowController.window makeKeyWindow];
 }
 
